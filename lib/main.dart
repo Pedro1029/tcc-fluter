@@ -1,31 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_perguntas/pages/auth_page.dart';
+import 'package:projeto_perguntas/utils/app_routes.dart';
 
-main() => runApp(PerguntaApp());
+void main() => runApp(const MyApp());
 
-class PerguntaApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
-  void login() {
-     print('Login Feito com sucesso!');
-  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-                title: const Text('Login'),
-                centerTitle: true,
-                foregroundColor: Colors.black,
-                backgroundColor: Colors.yellow[600]),
-            body: Column(
-              children: <Widget>[
-              ElevatedButton(
-                onPressed: login,
-                child: const Text('Login'),
-              )
-              ]
-            )
-        )
-    );
+     return MaterialApp(
+      title: 'TruckerFinder',
+      routes:{
+        AppRoutes.AUTH: (ctx) => const AuthPage(),
+      },
+     );
   }
 }
